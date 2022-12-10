@@ -10,6 +10,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<ShopOnlineDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ShopOnlineConnection"))
+);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
