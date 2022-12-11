@@ -36,5 +36,16 @@ namespace ShopOnline.Api.Controllers
             return CreateActionResult(CustomResponseDto<IEnumerable<T>>.Success(StatusCodes.Status200OK, response));
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] T entity)
+        {
+            var response = await genericRepository.AddAsync(entity);
+
+            if (response == null)
+                return CreateActionResult(CustomResponseDto<T>.Fail(StatusCodes.Status400BadRequest, "Couldn't Create Entry"));
+
+            return CreateActionResult(CustomResponseDto<T>.Success(StatusCodes.Status201Created, response));
+        }
+
     }
 }
