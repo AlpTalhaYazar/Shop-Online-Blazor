@@ -25,5 +25,16 @@ namespace ShopOnline.Api.Controllers
             return CreateActionResult(CustomResponseDto<T>.Success(StatusCodes.Status200OK, response));
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var response = await genericRepository.GetAllAsync();
+
+            if (response == null)
+                return CreateActionResult(CustomResponseDto<T>.Fail(StatusCodes.Status404NotFound, "No Entry Found"));
+
+            return CreateActionResult(CustomResponseDto<IEnumerable<T>>.Success(StatusCodes.Status200OK, response));
+        }
+
     }
 }
