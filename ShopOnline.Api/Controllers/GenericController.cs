@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ShopOnline.Api.Repositories.Contracts;
 using ShopOnline.Models.Dtos;
 
@@ -58,5 +58,18 @@ namespace ShopOnline.Api.Controllers
             return CreateActionResult(CustomResponseDto<T>.Success(StatusCodes.Status200OK, response));
         }
 
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var entity = await genericRepository.GetByIdAsync(id);
+
+            if (entity == null)
+                return CreateActionResult(CustomResponseDto<T>.Fail(StatusCodes.Status404NotFound, "No Entry Found"));
+
+            await genericRepository.DeleteAsync(entity);
+
+            return CreateActionResult(CustomResponseDto<T>.Success(StatusCodes.Status204NoContent));
+        }
     }
 }
