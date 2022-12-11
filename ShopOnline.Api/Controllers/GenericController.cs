@@ -1,4 +1,6 @@
-﻿using ShopOnline.Api.Repositories.Contracts;
+using Microsoft.AspNetCore.Mvc;
+using ShopOnline.Api.Repositories.Contracts;
+using ShopOnline.Models.Dtos;
 
 namespace ShopOnline.Api.Controllers
 {
@@ -10,5 +12,18 @@ namespace ShopOnline.Api.Controllers
         {
             this.genericRepository = genericRepository;
         }
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var response = await genericRepository.GetByIdAsync(id);
+
+            if (response == null)
+                return CreateActionResult(CustomResponseDto<T>.Fail(StatusCodes.Status404NotFound, "No Entry Found"));
+
+            return CreateActionResult(CustomResponseDto<T>.Success(StatusCodes.Status200OK, response));
+        }
+
     }
 }
