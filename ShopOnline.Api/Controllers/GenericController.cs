@@ -47,5 +47,16 @@ namespace ShopOnline.Api.Controllers
             return CreateActionResult(CustomResponseDto<T>.Success(StatusCodes.Status201Created, response));
         }
 
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody] T entity)
+        {
+            var response = await genericRepository.UpdateAsync(entity);
+
+            if (response == null)
+                return CreateActionResult(CustomResponseDto<T>.Fail(StatusCodes.Status400BadRequest, "Couldn't Update Entry"));
+
+            return CreateActionResult(CustomResponseDto<T>.Success(StatusCodes.Status200OK, response));
+        }
+
     }
 }
