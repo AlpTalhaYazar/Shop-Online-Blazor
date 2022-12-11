@@ -6,7 +6,7 @@ namespace ShopOnline.Api.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private readonly ShopOnlineDbContext shopOnlineDbContext;
+        protected readonly ShopOnlineDbContext shopOnlineDbContext;
 
         public GenericRepository(ShopOnlineDbContext shopOnlineDbContext)
         {

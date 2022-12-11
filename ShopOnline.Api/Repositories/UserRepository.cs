@@ -6,11 +6,8 @@ namespace ShopOnline.Api.Repositories
 {
     public class UserRepository : GenericRepository<User>, IUserRepository
     {
-        private readonly ShopOnlineDbContext shopOnlineDbContext;
-        
         public UserRepository(ShopOnlineDbContext shopOnlineDbContext) : base(shopOnlineDbContext)
         {
-            this.shopOnlineDbContext = shopOnlineDbContext;
         }
     }
 }

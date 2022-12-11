@@ -6,11 +6,8 @@ namespace ShopOnline.Api.Repositories
 {
     public class CartItemRepository : GenericRepository<CartItem>, ICartItemRepository
     {
-        private readonly ShopOnlineDbContext shopOnlineDbContext;
-
-        public CartItemRepository(ShopOnlineDbContext shopOnlineDbContext) : base(context)
+        public CartItemRepository(ShopOnlineDbContext shopOnlineDbContext) : base(shopOnlineDbContext)
         {
-            this.shopOnlineDbContext = shopOnlineDbContext;
         }
     }
 }
