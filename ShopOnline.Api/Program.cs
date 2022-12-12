@@ -18,6 +18,7 @@ builder.Services.AddDbContext<ShopOnlineDbContext>(options =>
 );
 
 builder.Services.AddScoped<IGenericRepository<Product>, GenericRepository<Product>>();
+builder.Services.AddScoped<IGenericRepository<Cart>, GenericRepository<Cart>>();
 
 var app = builder.Build();
 
