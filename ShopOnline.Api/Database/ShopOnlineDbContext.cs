@@ -22,7 +22,7 @@ namespace ShopOnline.Api.Database
                 Description = "A kit provided by Glossier, containing skin care, hair care and makeup products",
                 ImageURL = "/Images/Beauty/Beauty1.png",
                 Price = 100,
-                Qty = 100,
+                Quantity = 100,
                 CategoryId = 1
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -32,7 +32,7 @@ namespace ShopOnline.Api.Database
                 Description = "A kit provided by Curology, containing skin care products",
                 ImageURL = "/Images/Beauty/Beauty2.png",
                 Price = 50,
-                Qty = 45,
+                Quantity = 45,
                 CategoryId = 1
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -42,7 +42,7 @@ namespace ShopOnline.Api.Database
                 Description = "A kit provided by Curology, containing skin care products",
                 ImageURL = "/Images/Beauty/Beauty3.png",
                 Price = 20,
-                Qty = 30,
+                Quantity = 30,
                 CategoryId = 1
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -52,7 +52,7 @@ namespace ShopOnline.Api.Database
                 Description = "A kit provided by Schwarzkopf, containing skin care and hair care products",
                 ImageURL = "/Images/Beauty/Beauty4.png",
                 Price = 50,
-                Qty = 60,
+                Quantity = 60,
                 CategoryId = 1
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -62,7 +62,7 @@ namespace ShopOnline.Api.Database
                 Description = "Skin Care Kit, containing skin care and hair care products",
                 ImageURL = "/Images/Beauty/Beauty5.png",
                 Price = 30,
-                Qty = 85,
+                Quantity = 85,
                 CategoryId = 1
             });
 
@@ -74,7 +74,7 @@ namespace ShopOnline.Api.Database
                 Description = "Air Pods - in-ear wireless headphones",
                 ImageURL = "/Images/Electronic/Electronics1.png",
                 Price = 100,
-                Qty = 120,
+                Quantity = 120,
                 CategoryId = 3
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -84,7 +84,7 @@ namespace ShopOnline.Api.Database
                 Description = "On-ear Golden Headphones - these headphones are not wireless",
                 ImageURL = "/Images/Electronic/Electronics2.png",
                 Price = 40,
-                Qty = 200,
+                Quantity = 200,
                 CategoryId = 3
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -94,7 +94,7 @@ namespace ShopOnline.Api.Database
                 Description = "On-ear Black Headphones - these headphones are not wireless",
                 ImageURL = "/Images/Electronic/Electronics3.png",
                 Price = 40,
-                Qty = 300,
+                Quantity = 300,
                 CategoryId = 3
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -104,7 +104,7 @@ namespace ShopOnline.Api.Database
                 Description = "Sennheiser Digital Camera - High quality digital camera provided by Sennheiser - includes tripod",
                 ImageURL = "/Images/Electronic/Electronic4.png",
                 Price = 600,
-                Qty = 20,
+                Quantity = 20,
                 CategoryId = 3
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -114,7 +114,7 @@ namespace ShopOnline.Api.Database
                 Description = "Canon Digital Camera - High quality digital camera provided by Canon",
                 ImageURL = "/Images/Electronic/Electronic5.png",
                 Price = 500,
-                Qty = 15,
+                Quantity = 15,
                 CategoryId = 3
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -124,7 +124,7 @@ namespace ShopOnline.Api.Database
                 Description = "Gameboy - Provided by Nintendo",
                 ImageURL = "/Images/Electronic/technology6.png",
                 Price = 100,
-                Qty = 60,
+                Quantity = 60,
                 CategoryId = 3
             });
 
@@ -136,7 +136,7 @@ namespace ShopOnline.Api.Database
                 Description = "Very comfortable black leather office chair",
                 ImageURL = "/Images/Furniture/Furniture1.png",
                 Price = 50,
-                Qty = 212,
+                Quantity = 212,
                 CategoryId = 2
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -146,7 +146,7 @@ namespace ShopOnline.Api.Database
                 Description = "Very comfortable pink leather office chair",
                 ImageURL = "/Images/Furniture/Furniture2.png",
                 Price = 50,
-                Qty = 112,
+                Quantity = 112,
                 CategoryId = 2
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -156,7 +156,7 @@ namespace ShopOnline.Api.Database
                 Description = "Very comfortable lounge chair",
                 ImageURL = "/Images/Furniture/Furniture3.png",
                 Price = 70,
-                Qty = 90,
+                Quantity = 90,
                 CategoryId = 2
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -166,7 +166,7 @@ namespace ShopOnline.Api.Database
                 Description = "Very comfortable Silver lounge chair",
                 ImageURL = "/Images/Furniture/Furniture4.png",
                 Price = 120,
-                Qty = 95,
+                Quantity = 95,
                 CategoryId = 2
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -176,7 +176,7 @@ namespace ShopOnline.Api.Database
                 Description = "White and blue Porcelain Table Lamp",
                 ImageURL = "/Images/Furniture/Furniture6.png",
                 Price = 15,
-                Qty = 100,
+                Quantity = 100,
                 CategoryId = 2
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -186,7 +186,7 @@ namespace ShopOnline.Api.Database
                 Description = "Office Table Lamp",
                 ImageURL = "/Images/Furniture/Furniture7.png",
                 Price = 20,
-                Qty = 73,
+                Quantity = 73,
                 CategoryId = 2
             });
 
@@ -198,7 +198,7 @@ namespace ShopOnline.Api.Database
                 Description = "Comfortable Puma Sneakers in most sizes",
                 ImageURL = "/Images/Shoes/Shoes1.png",
                 Price = 100,
-                Qty = 50,
+                Quantity = 50,
                 CategoryId = 4
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -208,7 +208,7 @@ namespace ShopOnline.Api.Database
                 Description = "Colorful trainsers - available in most sizes",
                 ImageURL = "/Images/Shoes/Shoes2.png",
                 Price = 150,
-                Qty = 60,
+                Quantity = 60,
                 CategoryId = 4
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -218,7 +218,7 @@ namespace ShopOnline.Api.Database
                 Description = "Blue Nike Trainers - available in most sizes",
                 ImageURL = "/Images/Shoes/Shoes3.png",
                 Price = 200,
-                Qty = 70,
+                Quantity = 70,
                 CategoryId = 4
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -228,7 +228,7 @@ namespace ShopOnline.Api.Database
                 Description = "Colorful Hummel Trainers - available in most sizes",
                 ImageURL = "/Images/Shoes/Shoes4.png",
                 Price = 120,
-                Qty = 120,
+                Quantity = 120,
                 CategoryId = 4
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -238,7 +238,7 @@ namespace ShopOnline.Api.Database
                 Description = "Red Nike Trainers - available in most sizes",
                 ImageURL = "/Images/Shoes/Shoes5.png",
                 Price = 200,
-                Qty = 100,
+                Quantity = 100,
                 CategoryId = 4
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -248,7 +248,7 @@ namespace ShopOnline.Api.Database
                 Description = "Birkenstock Sandles - available in most sizes",
                 ImageURL = "/Images/Shoes/Shoes6.png",
                 Price = 50,
-                Qty = 150,
+                Quantity = 150,
                 CategoryId = 4
             });
 
