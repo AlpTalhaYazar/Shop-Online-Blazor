@@ -1,0 +1,20 @@
+﻿@inherits ProductCardBase
+
+@foreach (var product in ProductsWithCategory)
+{
+    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+        <a href="#">
+            <div class="card">
+                <img class="img-thumbnail" src="@product.ImageURL">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @product.Name
+                    </h5>
+                    <p class="card-text">
+                        <b>@product.Price.ToString("C")</b>
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+}
