@@ -13,14 +13,14 @@ namespace ShopOnline.Web.Services
             this.httpClient = httpClient;
         }
 
-        public Task<ProductDto> GetProductByIdWithCategoryAsync(int id)
+        public Task<ProductWithCategoryDto> GetProductByIdWithCategoryAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<ProductDto>> GetProductsWithCategoryAsync()
+        public async Task<IEnumerable<ProductWithCategoryDto>> GetProductsWithCategoryAsync()
         {
-            var response = await httpClient.GetFromJsonAsync<CustomResponseDto<IEnumerable<ProductDto>>>("api/v1/Product/GetProductsWithCategory");
+            var response = await httpClient.GetFromJsonAsync<CustomResponseDto<IEnumerable<ProductWithCategoryDto>>>("api/v1/Product/GetProductsWithCategory");
 
             var products = response.Data;
 

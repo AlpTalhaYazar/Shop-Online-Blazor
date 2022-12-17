@@ -5,7 +5,7 @@ namespace ShopOnline.Api.Repositories.Contracts
 {
     public interface IProductRepository : IGenericRepository<Product>
     {
-        Task<ProductDto> GetProductByIdWithCategoryAsync(int id);
-        Task<List<ProductDto>> GetProductsWithCategoryAsync();
+        Task<ProductWithCategoryDto> GetProductByIdWithCategoryAsync(int id);
+        Task<List<ProductWithCategoryDto>> GetProductsWithCategoryAsync();
     }
 }

@@ -12,13 +12,13 @@ namespace ShopOnline.Api.Repositories
         {
         }
 
-        public async Task<ProductDto> GetProductByIdWithCategoryAsync(int id)
+        public async Task<ProductWithCategoryDto> GetProductByIdWithCategoryAsync(int id)
         {
             // get product by id and include category and return as productdto
             var product = await shopOnlineDbContext.Products
                 .Include(x => x.ProductCategory)
                 .Where(x => x.Id == id)
-                .Select(x => new ProductDto
+                .Select(x => new ProductWithCategoryDto
                 {
                     Id = x.Id,
                     Name = x.Name,
@@ -33,11 +33,11 @@ namespace ShopOnline.Api.Repositories
             return product;
         }
 
-        public async Task<List<ProductDto>> GetProductsWithCategoryAsync()
+        public async Task<List<ProductWithCategoryDto>> GetProductsWithCategoryAsync()
         {
             var products = await shopOnlineDbContext.Products
                 .Include(x => x.ProductCategory)
-                .Select(x => new ProductDto
+                .Select(x => new ProductWithCategoryDto
                 {
                     Id = x.Id,
                     Name = x.Name,
