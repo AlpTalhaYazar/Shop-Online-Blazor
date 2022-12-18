@@ -1,0 +1,30 @@
+﻿@page "/Products/{Id:int}"
+
+@inherits ProductDetailsBase
+
+@if (ProductWithCategory == null)
+{
+    <h3>Loading product...</h3>
+}
+else
+{
+    <h3 class="mb-5">Product Details</h3>
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <img class="img-thumbnail" src="@ProductWithCategory.ImageURL">
+        </div>
+        <div class="col-12 col-md-6">
+            <h4>@ProductWithCategory.Name</h4>
+            <p>
+                <b>@ProductWithCategory.Price.ToString("C")</b>
+            </p>
+            <p>
+                @ProductWithCategory.Description
+            </p>
+            <p>
+                <b>Category:</b> @ProductWithCategory.CategoryName
+            </p>
+        </div>
+    </div>
+}
