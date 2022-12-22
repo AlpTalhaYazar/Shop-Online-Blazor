@@ -1,0 +1,9 @@
+﻿.product-details-header {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.product-details-header h3 {
+    display: contents;
+}
