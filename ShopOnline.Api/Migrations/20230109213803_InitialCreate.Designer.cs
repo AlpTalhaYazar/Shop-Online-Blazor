@@ -11,8 +11,8 @@ using ShopOnline.Api.Database;
 namespace ShopOnline.Api.Migrations
 {
     [DbContext(typeof(ShopOnlineDbContext))]
-    [Migration("20221213180927_ModelsUpdated")]
-    partial class ModelsUpdated
+    [Migration("20230109213803_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
