@@ -13,22 +13,23 @@ namespace ShopOnline.Web.Services
             this.httpClient = httpClient;
         }
 
-        public async Task<ProductWithCategoryDto> GetProductByIdWithCategoryAsync(int id)
+        public async Task<CustomResponseDto<ProductWithCategoryDto>> GetProductByIdWithCategoryAsync(int id)
         {
-            var response = await httpClient.GetFromJsonAsync<CustomResponseDto<ProductWithCategoryDto>>($"api/v1/Product/GetProductByIdWithCategory/{id}");
+            var response = await httpClient.GetAsync($"/api/v1/ProductWithCategory/{id}");
 
-            var product = response.Data;
-            
-            return product;
+            var responseContent = await response.Content.ReadFromJsonAsync<CustomResponseDto<ProductWithCategoryDto>>();
+
+            return responseContent;
         }
 
-        public async Task<IEnumerable<ProductWithCategoryDto>> GetProductsWithCategoryAsync()
+        public async Task<CustomResponseDto<IEnumerable<ProductWithCategoryDto>>> GetProductsWithCategoryAsync()
         {
-            var response = await httpClient.GetFromJsonAsync<CustomResponseDto<IEnumerable<ProductWithCategoryDto>>>("api/v1/Product/GetProductsWithCategory");
+            var response = await httpClient.GetAsync("api/v1/ProductWithCategory");
 
-            var products = response.Data;
+            var responseContent =
+                await response.Content.ReadFromJsonAsync<CustomResponseDto<IEnumerable<ProductWithCategoryDto>>>();
 
-            return products;
+            return responseContent;
         }
     }
 }
