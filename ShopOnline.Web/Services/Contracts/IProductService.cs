@@ -4,6 +4,6 @@ namespace ShopOnline.Web.Services.Contracts;
 
 public interface IProductService
 {
-    Task<ProductWithCategoryDto> GetProductByIdWithCategoryAsync(int id);
-    Task<IEnumerable<ProductWithCategoryDto>> GetProductsWithCategoryAsync();
+    Task<CustomResponseDto<ProductWithCategoryDto>> GetProductByIdWithCategoryAsync(int id);
+    Task<CustomResponseDto<IEnumerable<ProductWithCategoryDto>>> GetProductsWithCategoryAsync();
 }
