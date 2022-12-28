@@ -1,5 +1,4 @@
 ﻿@page "/Products"
-@using ShopOnline.Models.Dtos
 @inherits ProductsBase
 
 @if (Products == null)
@@ -19,7 +18,7 @@ else
             var categoryName = GetCategoryName(group);
 
             <div class="row productCategory" id="ProductCategory(@categoryName)">
-                <div class="col-12 categoryHeader">
+                <div class="categoryHeader">
                     <h4>@categoryName</h4>
                 </div>
                 <ProductCard ProductsWithCategory="GetProductsByCategory(group.Key)"></ProductCard>
