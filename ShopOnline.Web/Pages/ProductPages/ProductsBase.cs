@@ -12,7 +12,7 @@ public class ProductsBase : ComponentBase
 
     protected override async Task OnInitializedAsync()
     {
-        Products = await ProductService.GetProductsWithCategoryAsync();
+        Products = (await ProductService.GetProductsWithCategoryAsync()).Data;
     }
 
     protected IOrderedEnumerable<IGrouping<int, ProductWithCategoryDto>> GetGroupedProductsByCategory() =>

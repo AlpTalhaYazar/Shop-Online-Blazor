@@ -12,10 +12,14 @@ public class ProductDetailsBase : ComponentBase
     [Inject]
     public IProductService ProductService { get; set; }
 
-    public ProductWithCategoryDto ProductWithCategory { get; set; }
+    public ProductWithCategoryDto? ProductWithCategory { get; set; }
+    public List<string> Errors { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        ProductWithCategory = await ProductService.GetProductByIdWithCategoryAsync(Id);
+        var response = await ProductService.GetProductByIdWithCategoryAsync(Id);
+        
+        ProductWithCategory = response?.Data;
+        Errors = response?.Errors;
     }
 }
