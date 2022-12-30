@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using ShopOnline.Api.Entities;
 using ShopOnline.Api.Repositories.Contracts;
 using ShopOnline.Models.Dtos;
@@ -15,7 +15,7 @@ namespace ShopOnline.Api.Controllers
         }
 
         [HttpGet]
-        [Route("[action]/{id}")]
+        [Route("/api/v1/ProductWithCategory/{id}")]
         public async Task<IActionResult> GetProductByIdWithCategory(int id)
         {
             var response = await productRepository.GetProductByIdWithCategoryAsync(id);
@@ -27,7 +27,7 @@ namespace ShopOnline.Api.Controllers
         }
 
         [HttpGet]
-        [Route("[action]")]
+        [Route("/api/v1/ProductWithCategory")]
         public async Task<IActionResult> GetProductsWithCategory()
         {
             var response = await productRepository.GetProductsWithCategoryAsync();
