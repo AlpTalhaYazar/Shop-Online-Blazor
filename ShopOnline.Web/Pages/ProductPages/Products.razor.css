@@ -17,3 +17,11 @@
     text-align: center;
     color: #b6d4fe;
 }
+
+.loadingAnimationDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+}

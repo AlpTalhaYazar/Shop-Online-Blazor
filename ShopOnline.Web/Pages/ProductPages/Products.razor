@@ -3,7 +3,9 @@
 
 @if (Products == null)
 {
-    <h3>Loading products...</h3>
+    <div class="loadingAnimationDiv">
+        <DisplayLoadingAnimation/>
+    </div>
 }
 else
 {
