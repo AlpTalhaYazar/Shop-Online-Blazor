@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ShopOnline.Api.Entities;
 using ShopOnline.Api.Repositories.Contracts;
 using ShopOnline.Models.Dtos;
@@ -20,10 +20,12 @@ namespace ShopOnline.Api.Controllers
         {
             var response = await productRepository.GetProductByIdWithCategoryAsync(id);
 
-            if (response == null)
-                return CreateActionResult(CustomResponseDto<ProductWithCategoryDto>.Fail(StatusCodes.Status404NotFound, "No Entry Found"));
+            if (response != null)
+                return CreateActionResult(
+                    CustomResponseDto<ProductWithCategoryDto>.Success(StatusCodes.Status200OK, response));
 
-            return CreateActionResult(CustomResponseDto<ProductWithCategoryDto>.Success(StatusCodes.Status200OK, response));
+            return CreateActionResult(
+                CustomResponseDto<ProductWithCategoryDto>.Fail(StatusCodes.Status200OK, "No Entry Found"));
         }
 
         [HttpGet]
@@ -32,10 +34,12 @@ namespace ShopOnline.Api.Controllers
         {
             var response = await productRepository.GetProductsWithCategoryAsync();
 
-            if (response == null)
-                return CreateActionResult(CustomResponseDto<IEnumerable<ProductWithCategoryDto>>.Fail(StatusCodes.Status404NotFound, "No Entry Found"));
+            if (response != null)
+                return CreateActionResult(
+                    CustomResponseDto<IEnumerable<ProductWithCategoryDto>>.Success(StatusCodes.Status200OK, response));
 
-            return CreateActionResult(CustomResponseDto<IEnumerable<ProductWithCategoryDto>>.Success(StatusCodes.Status200OK, response));
+            return CreateActionResult(
+                CustomResponseDto<IEnumerable<ProductWithCategoryDto>>.Fail(StatusCodes.Status200OK, "No Entry Found"));
         }
     }
 }
