@@ -3,43 +3,42 @@ using ShopOnline.Api.Entities;
 using ShopOnline.Api.Repositories.Contracts;
 using ShopOnline.Models.Dtos;
 
-namespace ShopOnline.Api.Controllers
+namespace ShopOnline.Api.Controllers;
+
+public class ProductController : GenericController<Product>
 {
-    public class ProductController : GenericController<Product>
+    private readonly IProductRepository productRepository;
+
+    public ProductController(IGenericRepository<Product> genericRepository, IProductRepository productRepository) : base(genericRepository)
     {
-        private readonly IProductRepository productRepository;
+        this.productRepository = productRepository;
+    }
 
-        public ProductController(IGenericRepository<Product> genericRepository, IProductRepository productRepository) : base(genericRepository)
-        {
-            this.productRepository = productRepository;
-        }
+    [HttpGet]
+    [Route("/api/v1/ProductWithCategory/{id}")]
+    public async Task<IActionResult> GetProductByIdWithCategory(int id)
+    {
+        var response = await productRepository.GetProductByIdWithCategoryAsync(id);
 
-        [HttpGet]
-        [Route("/api/v1/ProductWithCategory/{id}")]
-        public async Task<IActionResult> GetProductByIdWithCategory(int id)
-        {
-            var response = await productRepository.GetProductByIdWithCategoryAsync(id);
-
-            if (response != null)
-                return CreateActionResult(
-                    CustomResponseDto<ProductWithCategoryDto>.Success(StatusCodes.Status200OK, response));
-
+        if (response != null)
             return CreateActionResult(
-                CustomResponseDto<ProductWithCategoryDto>.Fail(StatusCodes.Status200OK, "No Entry Found"));
-        }
+                CustomResponseDto<ProductWithCategoryDto>.Success(StatusCodes.Status200OK, response));
 
-        [HttpGet]
-        [Route("/api/v1/ProductWithCategory")]
-        public async Task<IActionResult> GetProductsWithCategory()
-        {
-            var response = await productRepository.GetProductsWithCategoryAsync();
+        return CreateActionResult(
+            CustomResponseDto<ProductWithCategoryDto>.Fail(StatusCodes.Status200OK, "No Entry Found"));
+    }
 
-            if (response != null)
-                return CreateActionResult(
-                    CustomResponseDto<IEnumerable<ProductWithCategoryDto>>.Success(StatusCodes.Status200OK, response));
+    [HttpGet]
+    [Route("/api/v1/ProductWithCategory")]
+    public async Task<IActionResult> GetProductsWithCategory()
+    {
+        var response = await productRepository.GetProductsWithCategoryAsync();
 
+        if (response != null)
             return CreateActionResult(
-                CustomResponseDto<IEnumerable<ProductWithCategoryDto>>.Fail(StatusCodes.Status200OK, "No Entry Found"));
-        }
+                CustomResponseDto<IEnumerable<ProductWithCategoryDto>>.Success(StatusCodes.Status200OK, response));
+
+        return CreateActionResult(
+            CustomResponseDto<IEnumerable<ProductWithCategoryDto>>.Fail(StatusCodes.Status200OK, "No Entry Found"));
     }
 }

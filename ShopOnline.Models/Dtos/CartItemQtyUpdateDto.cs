@@ -1,8 +1,7 @@
-﻿namespace ShopOnline.Models.Dtos
+﻿namespace ShopOnline.Models.Dtos;
+
+public class CartItemQuantityUpdateDto
 {
-    public class CartItemQuantityUpdateDto
-    {
-        public int CartItemId { get; set; }
-        public int Quantity { get; set; }
-    }
+    public int CartItemId { get; set; }
+    public int Quantity { get; set; }
 }

@@ -2,12 +2,11 @@
 using ShopOnline.Api.Entities;
 using ShopOnline.Api.Repositories.Contracts;
 
-namespace ShopOnline.Api.Repositories
+namespace ShopOnline.Api.Repositories;
+
+public class UserRepository : GenericRepository<User>, IUserRepository
 {
-    public class UserRepository : GenericRepository<User>, IUserRepository
+    public UserRepository(ShopOnlineDbContext shopOnlineDbContext) : base(shopOnlineDbContext)
     {
-        public UserRepository(ShopOnlineDbContext shopOnlineDbContext) : base(shopOnlineDbContext)
-        {
-        }
     }
 }

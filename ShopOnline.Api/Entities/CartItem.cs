@@ -1,10 +1,12 @@
-﻿namespace ShopOnline.Api.Entities
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ShopOnline.Api.Entities;
+
+public class CartItem
 {
-    public class CartItem
-    {
-        public int Id { get; set; }
-        public int CartId { get; set; }
-        public int ProductId { get; set; }
-        public int Quantity { get; set; }
-    }
+    public int Id { get; set; }
+    public int CartId { get; set; }
+    public int ProductId { get; set; }
+    public int Quantity { get; set; }
+}
 }
