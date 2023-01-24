@@ -2,7 +2,11 @@
 
 @inherits ProductDetailsBase
 
-@if (ProductWithCategory == null)
+@if (Errors != null && Errors.Any())
+{
+    <DisplayError ErrorMessages="@Errors"></DisplayError>
+}
+else if (ProductWithCategory == null)
 {
     <h3>Loading product...</h3>
 }

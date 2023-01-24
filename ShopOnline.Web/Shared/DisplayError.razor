@@ -1,0 +1,9 @@
+﻿@foreach (var errormessage in ErrorMessages)
+{
+    <h3 class="text-danger">@errormessage</h3>
+}
+
+@code {
+    [Parameter]
+    public List<string> ErrorMessages { get; set; }
+}
